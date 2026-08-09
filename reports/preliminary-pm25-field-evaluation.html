@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A preliminary, non-collocated field comparison of an outdoor Open PM Network SPS30 node with Atlanta-area AirNow and PurpleAir observations.">
+    <meta name="theme-color" content="#f1f8f3">
+    <link rel="canonical" href="https://www.openpmnetwork.org/reports/preliminary-pm25-field-evaluation.html">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../app.js" defer></script>
+    <title>Preliminary PM2.5 Field Evaluation | Open PM Network</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header scrolled" data-header>
+      <div class="shell nav-wrap">
+        <a class="brand" href="../index.html" aria-label="Open PM Network home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Open PM Network</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span></button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav><a href="../index.html#platform">Platform</a><a href="../index.html#science">Science</a><a href="../index.html#community">Community</a><a class="nav-cta" href="https://github.com/pengfeiliu371/pm-sensor-node">Source code</a></nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="report-main">
+      <article class="report-shell">
+        <header class="report-header">
+          <a class="back-link" href="../index.html#science">← Back to the project</a>
+          <p class="eyebrow">Public field report · Version 1.0</p>
+          <h1>Preliminary PM₂.₅ field evaluation</h1>
+          <p class="lede">A non-collocated comparison of an outdoor SPS30 research node with regional AirNow and PurpleAir observations in the Atlanta metropolitan area.</p>
+          <div class="report-meta" aria-label="Report metadata">
+            <span>18 July–9 August 2026</span>
+            <span>21-day pilot</span>
+            <span>Hourly UTC-aligned data</span>
+            <span>Public location: metropolitan-area scale</span>
+          </div>
+        </header>
+
+        <aside class="report-notice">
+          <strong>Interpretation boundary</strong>
+          <p>This was not a collocated calibration or regulatory validation. The comparison instruments were at different locations, so agreement and differences reflect both instrument response and real spatial variability.</p>
+        </aside>
+
+        <div class="report-body">
+          <h2>Summary</h2>
+          <p>This initial evaluation asked whether hourly PM₂.₅ reported by the outdoor SPS30 node followed major changes observed across independent Atlanta-area monitoring networks. It is useful for detecting gross timing problems, offsets, and shared regional episodes before a formal collocation study.</p>
+          <div class="report-summary">
+            <article><strong>497</strong><span>hourly bins retained for comparison</span></article>
+            <article><strong>97.3%</strong><span>of eligible hourly bins met the coverage criterion</span></article>
+            <article><strong>21 days</strong><span>of summer field observations</span></article>
+          </div>
+
+          <h2>Methods</h2>
+          <p>SPS30 measurements were aggregated to UTC hourly means. An hour was retained when sensor coverage was at least 75%. Regional comparisons used preliminary AirNow observations and quality-controlled PurpleAir PMS5003 data.</p>
+          <p>PurpleAir observations were summarized across a small group of reporting sites. Hours with substantial disagreement between the two channels of an individual PurpleAir sensor were excluded. The U.S.-wide EPA/Barkjohn equation was also applied to the PurpleAir CF=1 observations:</p>
+          <p><code>corrected PM₂.₅ = 0.524 × CF=1 PM₂.₅ − 0.0862 × RH + 5.75</code></p>
+          <p>No separate relative-humidity correction was applied to the SPS30 output. Mean bias below is defined as SPS30 minus the comparison dataset.</p>
+
+          <h2>Preliminary results</h2>
+          <div class="table-wrap" role="region" aria-label="Preliminary comparison statistics" tabindex="0">
+            <table class="report-table">
+              <thead>
+                <tr><th>Comparison dataset</th><th>Paired hours</th><th>SPS30 mean</th><th>Comparison mean</th><th>Mean bias</th><th>MAE</th><th>RMSE</th><th>Pearson r</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Atlanta-area AirNow mean</td><td>497</td><td>7.37</td><td>10.50</td><td>−3.13</td><td>3.67</td><td>4.28</td><td>0.839</td></tr>
+                <tr><td>PurpleAir CF=1 regional median</td><td>497</td><td>7.37</td><td>14.55</td><td>−7.18</td><td>7.18</td><td>9.54</td><td>0.981</td></tr>
+                <tr><td>PurpleAir EPA-corrected regional median</td><td>497</td><td>7.37</td><td>8.59</td><td>−1.22</td><td>1.53</td><td>1.96</td><td>0.973</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="report-caption">Concentrations and error metrics are in µg m⁻³. Values use paired hourly observations. Public reporting is intentionally limited to regional aggregate comparisons.</p>
+          <p>The SPS30 followed much of the hour-to-hour variability observed by the regional sensor groups, including an elevated late-July episode. Raw PurpleAir CF=1 concentrations were systematically higher than the SPS30 during this period. Applying the EPA/Barkjohn correction reduced the PurpleAir regional median and brought its mean closer to the SPS30 mean.</p>
+          <p>This similarity does not show that the SPS30 was unaffected by humidity, nor does it make corrected PurpleAir data a reference standard. The two sensor families use different optical designs, firmware, and proprietary transformations from scattering response to reported mass concentration.</p>
+
+          <h2>Scientific boundaries</h2>
+          <ol class="report-boundaries">
+            <li><strong>No collocation.</strong> Spatial separation means local sources, rainfall, mixing height, and plume transport can produce real concentration differences.</li>
+            <li><strong>Short summer record.</strong> The study did not characterize winter aerosol, fog, very high concentrations, long-term drift, or seasonal transferability.</li>
+            <li><strong>No independent SPS30 humidity correction.</strong> The analysis cannot separate humidity effects from spatial and instrument effects.</li>
+            <li><strong>Comparison data are not a single reference method.</strong> Recent AirNow values are preliminary, and PurpleAir remains an optical sensor estimate after correction.</li>
+            <li><strong>No uncertainty or precision study.</strong> Replicate nodes and collocated reference measurements are required for defensible calibration.</li>
+          </ol>
+
+          <h2>Next study</h2>
+          <p>The next priority is a true collocation of the SPS30 node, the planned dual-PM node, and a well-characterized comparison instrument at the same location, inlet height, and time base. A multiweek study should span a wider range of relative humidity and PM₂.₅ and retain complete high-time-resolution sensor output.</p>
+          <p>Until that work is complete, this result should be described as <strong>encouraging preliminary field consistency</strong>, not an accuracy validation or regulatory comparison.</p>
+
+          <h2>Data governance</h2>
+          <p>This public report uses regional-scale location disclosure and aggregate comparison statistics. Exact private deployment coordinates, site-distance combinations that could reveal them, device identifiers, and raw private observations are intentionally excluded. A public dataset may be released later through a deployment-specific publication review.</p>
+
+          <h2>References</h2>
+          <ul>
+            <li>Barkjohn, K. K., Gantt, B., and Clements, A. L. (2021), “Development and application of a United States-wide correction for PM₂.₅ data collected with the PurpleAir sensor,” <em>Atmospheric Measurement Techniques</em>, 14, 4617–4637. <a href="https://doi.org/10.5194/amt-14-4617-2021">https://doi.org/10.5194/amt-14-4617-2021</a></li>
+            <li>Sensirion, <a href="https://sensirion.com/file/datasheet_sps30"><em>Datasheet SPS30: Particulate Matter Sensor</em></a>.</li>
+            <li>U.S. EPA AirNow, <a href="https://www.airnow.gov/about-the-data/">About the Data</a>.</li>
+          </ul>
+
+          <p class="report-license">Report text © 2026 Open PM Network contributors, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Website source code remains under the MIT License. No raw sensor dataset is included with this report.</p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer"><div class="shell footer-bottom"><span>© <span data-year>2026</span> Open PM Network</span><span>Research prototype · Not a regulatory monitor</span></div></footer>
+  </body>
+</html>
