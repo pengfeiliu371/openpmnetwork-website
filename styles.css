@@ -215,6 +215,9 @@ h1 em { color: #177451; font-weight: 500; }
 .report-table tbody tr:last-child td { border-bottom: 0; }
 .report-table tbody tr:nth-child(even) { background: #fbfcf9; }
 .report-caption { color: #718078; font-size: .76rem; }
+.report-figure { margin: 38px 0 30px; }
+.report-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 14px; background: white; }
+.report-figure figcaption { margin-top: 12px; color: #66776f; font-size: .78rem; line-height: 1.55; }
 .report-boundaries { display: grid; gap: 12px; margin: 25px 0; padding: 0; list-style: none; counter-reset: boundary; }
 .report-boundaries li { position: relative; padding: 18px 20px 18px 58px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcf9; counter-increment: boundary; }
 .report-boundaries li::before { content: counter(boundary, decimal-leading-zero); position: absolute; left: 19px; top: 18px; color: #25825f; font-family: ui-monospace, SFMono-Regular, monospace; font-size: .72rem; }
