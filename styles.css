@@ -53,7 +53,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .eyebrow { margin: 0 0 18px; color: #177451; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .pulse { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #24a96f; box-shadow: 0 0 0 5px rgba(36,169,111,.12); }
 h1, h2, h3, p { margin-top: 0; }
-h1 { max-width: 760px; margin-bottom: 28px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.4rem, 6.4vw, 6.2rem); font-weight: 500; line-height: .94; letter-spacing: -.055em; }
+h1 { max-width: 720px; margin-bottom: 28px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.15rem, 4.8vw, 4.8rem); font-weight: 500; line-height: .98; letter-spacing: -.045em; }
 h1 em { color: #177451; font-weight: 500; }
 .hero-lede { max-width: 650px; margin-bottom: 30px; color: #43574f; font-size: clamp(1.05rem, 1.7vw, 1.23rem); line-height: 1.72; }
 .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -250,7 +250,7 @@ h1 em { color: #177451; font-weight: 500; }
 @media (max-width: 700px) {
   :root { --shell: min(100% - 28px, 1180px); }
   .hero { min-height: auto; padding-bottom: 80px; }
-  h1 { font-size: clamp(3rem, 15vw, 4.6rem); }
+  h1 { font-size: clamp(2.75rem, 12.5vw, 3.8rem); line-height: 1; }
   .hero-instrument { min-height: 350px; }
   .instrument-card { border-radius: 18px; }
   .particle-field { height: 185px; padding-top: 25px; }
